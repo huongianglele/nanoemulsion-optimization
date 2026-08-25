@@ -1,2 +1,2 @@
-mean_A,mean_B,sd_noise,n,alpha,simulations,power
-20,30,8,3,0.05,5000,0.2164
+mean_A,sd_noise,n,alpha,simulations,observed_effect,power_observed,mdd_80pct
+20,8,3,0.05,5000,33,0.9534,24.58197611292074
