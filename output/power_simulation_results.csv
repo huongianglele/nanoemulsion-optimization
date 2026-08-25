@@ -1,0 +1,2 @@
+mean_A,mean_B,sd_noise,n,alpha,simulations,power
+20,30,8,3,0.05,5000,0.2164

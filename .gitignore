@@ -1,0 +1,13 @@
+# R / RStudio
+.Rhistory
+.RData
+.RDataTmp
+.Rproj.user/
+*.Rproj
+
+# macOS
+.DS_Store
+
+# Session artifacts
+*.Rout
+*.Rout.save
