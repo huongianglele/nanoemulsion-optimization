@@ -28,17 +28,22 @@ dir.create("data", showWarnings = FALSE)
 
 set.seed(123)
 
+# Smix = surfactant mixture (Tween 80 : Span 80)
 smix_levels      <- c("1:1", "2:1", "3:1")
 oil_ratio_levels <- c("1:4", "1:5", "1:6")
 
-design <- expand.grid(Smix_Ratio = smix_levels, Oil_Smix_Ratio = oil_ratio_levels)
+# Assign formulation IDs with Smix ratio varying slowest (outer loop) and
+# oil:Smix fastest, so that F6 = Smix 2:1 x Oil:Smix 1:6 (the optimal
+# formulation), matching the experimental numbering in the systematic review.
+design <- expand.grid(Oil_Smix_Ratio = oil_ratio_levels, Smix_Ratio = smix_levels)
+design <- design[, c("Smix_Ratio", "Oil_Smix_Ratio")]
 design$Formulation_ID <- paste0("F", 1:9)
 
 full_data <- design[rep(seq_len(nrow(design)), each = 3), ]
 full_data$Replicate <- rep(1:3, times = 9)
 
 simulate_flux <- function(smix, ratio) {
-  flux <- 15                                   # baseline
+  flux <- 15                                   # baseline flux (Tamanu oil + minoxidil system)
   if (smix == "2:1")     flux <- flux + 12     # Smix 2:1 main effect
   if (smix == "3:1")     flux <- flux + 6      # Smix 3:1 main effect
   if (ratio == "1:5")    flux <- flux + 4      # oil 1:5 main effect

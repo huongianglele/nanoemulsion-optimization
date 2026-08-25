@@ -2,9 +2,9 @@
 ## Factorial design, power simulation, ANOVA, and Tukey HSD
 
 A reproducible R analysis of a **3 × 3 full-factorial experiment** optimizing a
-minoxidil nanoemulsion formulation. Two factors are varied — surfactant
-co-surfactant (Smix) ratio and oil:Smix ratio — and the response is **flux
-(Jss)**, where higher is better.
+minoxidil nanoemulsion formulation (Tamanu oil + minoxidil). Two factors are
+varied — surfactant mixture (**Smix**, Tween 80 : Span 80) ratio and oil:Smix
+ratio — and the response is **flux (Jss)**, where higher is better.
 
 > ⚠️ **Note on data:** the response data are **simulated in silico** (`02_generate_data.R`)
 > to illustrate the full statistical workflow. The same pipeline accepts a real
@@ -44,9 +44,9 @@ replicates for confirmatory experiments.
 with normality (assumption satisfied).
 
 **4. Tukey HSD.** The interaction is driven by a **synergy**: formulation
-**Smix 2:1 + oil:Smix 1:6** has the highest flux (≈ +33.6 units vs. baseline,
-p < 0.001), confirming the optimum is the 2:1 × 1:6 combination, not either
-factor alone.
+**F6 (Smix 2:1 + oil:Smix 1:6)** has the highest flux (≈ +33.6 units vs.
+baseline, p < 0.001), confirming the optimum is the 2:1 × 1:6 combination, not
+either factor alone.
 
 ---
 
